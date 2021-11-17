@@ -10,6 +10,13 @@ app.use(bodyparser.json())
 app.use(usersRouter);
 app.use(transactionsRouter);
 
+app.get('/', (req, res) => {
+    res.json({
+      succes: true,
+      msg:'it works',
+    });
+  });
+
 app.use("/uploads", express.static(__dirname + "/image/uploads"))
 app.use("/helpers", express.static(__dirname + "/image/helpers"))
 
